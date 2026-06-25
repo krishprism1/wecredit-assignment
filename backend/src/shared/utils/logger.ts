@@ -1,0 +1,18 @@
+// backend/src/shared/utils/logger.ts
+import pino from 'pino';
+import { env } from '../../config/env.js';
+
+export const logger = pino({
+  level: env.NODE_ENV === 'test' ? 'silent' : (process.env.LOG_LEVEL || 'info'),
+  transport:
+    env.NODE_ENV === 'development'
+      ? {
+          target: 'pino-pretty',
+          options: {
+            colorize: true,
+            ignore: 'pid,hostname',
+            translateTime: 'SYS:standard',
+          },
+        }
+      : undefined,
+});
