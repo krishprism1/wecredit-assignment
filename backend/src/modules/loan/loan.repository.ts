@@ -1,4 +1,3 @@
-// backend/src/modules/loan/loan.repository.ts
 import { supabaseAdmin } from '../../config/supabase.js';
 import { LoanApplication, LoanStatus } from 'shared';
 

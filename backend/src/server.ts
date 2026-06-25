@@ -3,7 +3,7 @@ import { env } from './config/env.js';
 import { logger } from './shared/utils/logger.js';
 
 const server = app.listen(env.PORT, () => {
-  logger.info(`🚀 Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
+  logger.info(`Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
 });
 
 const gracefulShutdown = (signal: string) => {

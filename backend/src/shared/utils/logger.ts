@@ -1,4 +1,3 @@
-// backend/src/shared/utils/logger.ts
 import pino from 'pino';
 import { env } from '../../config/env.js';
 

@@ -1,4 +1,3 @@
-// backend/src/modules/loan/loan.schemas.ts
 import { z } from 'zod';
 
 export const createLoanSchema = z.object({

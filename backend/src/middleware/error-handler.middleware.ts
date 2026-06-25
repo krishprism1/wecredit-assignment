@@ -1,4 +1,3 @@
-// backend/src/middleware/error-handler.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { AppError } from '../shared/errors/app-error.js';
 import { logger } from '../shared/utils/logger.js';
@@ -22,7 +21,6 @@ export const errorHandler = (
     return res.status(err.statusCode).json(response);
   }
 
-  // Log unhandled exceptions
   logger.error(err, `Unhandled error on ${req.method} ${req.url}`);
 
   const response: ApiResponse = {

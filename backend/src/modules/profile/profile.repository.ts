@@ -1,4 +1,3 @@
-// backend/src/modules/profile/profile.repository.ts
 import { supabaseAdmin } from '../../config/supabase.js';
 import { Profile, Address, EmploymentDetails } from 'shared';
 

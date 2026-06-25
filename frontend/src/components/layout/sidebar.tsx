@@ -33,7 +33,6 @@ export const Sidebar: React.FC = () => {
   const adminLinks = [
     { href: '/admin/dashboard', label: 'Overview', icon: LayoutDashboard },
     { href: '/admin/applications', label: 'All Applications', icon: FileText },
-    // { href: '/admin/audit-logs', label: 'System Logs', icon: History },
   ];
 
   const links = user.is_admin ? adminLinks : customerLinks;

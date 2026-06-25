@@ -1,4 +1,3 @@
-// backend/src/modules/admin/admin.schemas.ts
 import { z } from 'zod';
 
 export const reviewActionSchema = z.object({

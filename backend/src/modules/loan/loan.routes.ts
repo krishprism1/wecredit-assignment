@@ -1,4 +1,3 @@
-// backend/src/modules/loan/loan.routes.ts
 import { Router } from 'express';
 import { LoanController } from './loan.controller.js';
 import { authenticate } from '../../middleware/auth.middleware.js';

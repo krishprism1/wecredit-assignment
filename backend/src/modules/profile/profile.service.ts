@@ -1,4 +1,3 @@
-// backend/src/modules/profile/profile.service.ts
 import { ProfileRepository } from './profile.repository.js';
 import { NotFoundError } from '../../shared/errors/app-error.js';
 import { Address, EmploymentDetails, Profile } from 'shared';

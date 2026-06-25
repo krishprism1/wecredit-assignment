@@ -1,4 +1,3 @@
-// backend/src/modules/profile/profile.schemas.ts
 import { z } from 'zod';
 
 export const updateProfileSchema = z.object({

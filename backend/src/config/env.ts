@@ -1,9 +1,7 @@
-// backend/src/config/env.ts
 import path from 'path';
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-// Load environment variables from .env file
 dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), '../.env') });
 dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
@@ -21,7 +19,7 @@ const envSchema = z.object({
 const result = envSchema.safeParse(process.env);
 
 if (!result.success) {
-  console.error('❌ Invalid environment variables:', result.error.format());
+  console.error('Invalid environment variables:', result.error.format());
   process.exit(1);
 }
 

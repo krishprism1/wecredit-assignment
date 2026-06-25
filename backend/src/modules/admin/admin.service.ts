@@ -1,4 +1,3 @@
-// backend/src/modules/admin/admin.service.ts
 import { AdminRepository } from './admin.repository.js';
 import { LoanRepository } from '../loan/loan.repository.js';
 import { supabaseAdmin } from '../../config/supabase.js';
@@ -58,7 +57,6 @@ export class AdminService {
     // Assign the admin
     await this.adminRepository.assignAdmin(loanId, adminId);
 
-    // Update status to UNDER_REVIEW
     return this.loanRepository.updateLoanStatus(
       loanId,
       'SUBMITTED',

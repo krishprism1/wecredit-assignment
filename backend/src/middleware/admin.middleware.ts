@@ -1,4 +1,3 @@
-// backend/src/middleware/admin.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { ForbiddenError } from '../shared/errors/app-error.js';
 

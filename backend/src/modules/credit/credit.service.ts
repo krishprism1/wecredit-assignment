@@ -1,4 +1,3 @@
-// backend/src/modules/credit/credit.service.ts
 import { supabaseAdmin } from '../../config/supabase.js';
 import { BadRequestError, NotFoundError } from '../../shared/errors/app-error.js';
 import { CreditScore } from 'shared';

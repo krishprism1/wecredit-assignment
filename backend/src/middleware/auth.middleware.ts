@@ -1,4 +1,3 @@
-// backend/src/middleware/auth.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { UnauthorizedError, InternalServerError } from '../shared/errors/app-error.js';
 import { supabaseAdmin } from '../config/supabase.js';
@@ -45,8 +44,6 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
       .single();
 
     if (dbError) {
-      // If profile doesn't exist, try to create it or throw error
-      // Note: Triggers on auth.users should have created it, but in case of delay/race conditions:
       return next(new InternalServerError('Failed to retrieve user profile'));
     }
 

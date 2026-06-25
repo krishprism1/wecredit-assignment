@@ -1,4 +1,3 @@
-// backend/src/modules/loan/loan.controller.ts
 import { Request, Response, NextFunction } from 'express';
 import { LoanService } from './loan.service.js';
 import { ApiResponse } from 'shared';

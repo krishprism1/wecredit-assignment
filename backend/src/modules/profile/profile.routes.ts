@@ -1,4 +1,3 @@
-// backend/src/modules/profile/profile.routes.ts
 import { Router } from 'express';
 import { ProfileController } from './profile.controller.js';
 import { authenticate } from '../../middleware/auth.middleware.js';

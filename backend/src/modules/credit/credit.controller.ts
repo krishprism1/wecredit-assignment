@@ -1,4 +1,3 @@
-// backend/src/modules/credit/credit.controller.ts
 import { Request, Response, NextFunction } from 'express';
 import { CreditService } from './credit.service.js';
 import { ApiResponse } from 'shared';

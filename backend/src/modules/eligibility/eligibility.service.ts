@@ -1,4 +1,3 @@
-// backend/src/modules/eligibility/eligibility.service.ts
 import { supabaseAdmin } from '../../config/supabase.js';
 import { BadRequestError, NotFoundError } from '../../shared/errors/app-error.js';
 import { EligibilityResult } from 'shared';
@@ -97,12 +96,10 @@ export class EligibilityService {
     const requestedAmount = Number(application.amount_requested);
 
     if (isEligible && requestedAmount > maxEligibleAmount) {
-      // Don't reject outright, but flag that amount requested is higher than allowed
       reasons.push(`Requested amount ₹${requestedAmount.toLocaleString()} exceeds maximum eligible limit of ₹${maxEligibleAmount.toLocaleString()} based on credit score.`);
     }
 
     // Calculate Estimated EMI
-    // Annual Interest Rate estimation based on score
     let interestRate = 0.18;
     if (creditScore.score >= 800) interestRate = 0.10;
     else if (creditScore.score >= 700) interestRate = 0.12;
@@ -112,17 +109,14 @@ export class EligibilityService {
     const months = application.tenure_months;
     const emi = (requestedAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
 
-    // Rule E: Debt-to-Income (DTI) ratio (EMI should not exceed 50% of income)
     const dti = (emi / income) * 100;
     if (isEligible && dti > 50) {
       isEligible = false;
       reasons.push(`Estimated Monthly Installment (EMI) of ₹${Math.round(emi).toLocaleString()} exceeds 50% of monthly income (DTI: ${dti.toFixed(1)}%)`);
     }
 
-    // 4. Recommended Tenure Calculations (to bring DTI down to ~40%)
     let recommendedTenure = months;
     if (dti > 40 && isEligible) {
-      // Find a tenure (up to 60 months) that brings EMI below 40%
       for (let t = months; t <= 60; t++) {
         const estEmi = (requestedAmount * monthlyRate * Math.pow(1 + monthlyRate, t)) / (Math.pow(1 + monthlyRate, t) - 1);
         if ((estEmi / income) * 100 <= 40) {

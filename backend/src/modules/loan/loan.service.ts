@@ -1,4 +1,3 @@
-// backend/src/modules/loan/loan.service.ts
 import { LoanRepository } from './loan.repository.js';
 import { CreditService } from '../credit/credit.service.js';
 import { EligibilityService } from '../eligibility/eligibility.service.js';

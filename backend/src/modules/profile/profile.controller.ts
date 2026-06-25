@@ -1,4 +1,3 @@
-// backend/src/modules/profile/profile.controller.ts
 import { Request, Response, NextFunction } from 'express';
 import { ProfileService } from './profile.service.js';
 import { ApiResponse } from 'shared';

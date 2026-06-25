@@ -1,4 +1,3 @@
-// backend/src/middleware/validate.middleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { AnyZodObject, ZodError } from 'zod';
 import { ValidationError } from '../shared/errors/app-error.js';
@@ -11,7 +10,6 @@ export const validate = (schema: AnyZodObject) => {
         query: req.query,
         params: req.params,
       });
-      // Replace with validated data
       req.body = parsed.body;
       req.query = parsed.query;
       req.params = parsed.params;
