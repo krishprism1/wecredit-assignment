@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: env.CORS_ORIGIN,
+  origin: "https://we-credit-frontend-mnkz.vercel.app",
   credentials: true,
 }));
 app.use(express.json());
