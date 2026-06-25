@@ -1,0 +1,50 @@
+import { z } from 'zod';
+export declare const registerSchema: z.ZodObject<{
+    body: z.ZodObject<{
+        email: z.ZodString;
+        password: z.ZodString;
+        full_name: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        email: string;
+        password: string;
+        full_name: string;
+    }, {
+        email: string;
+        password: string;
+        full_name: string;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    body: {
+        email: string;
+        password: string;
+        full_name: string;
+    };
+}, {
+    body: {
+        email: string;
+        password: string;
+        full_name: string;
+    };
+}>;
+export declare const loginSchema: z.ZodObject<{
+    body: z.ZodObject<{
+        email: z.ZodString;
+        password: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        email: string;
+        password: string;
+    }, {
+        email: string;
+        password: string;
+    }>;
+}, "strip", z.ZodTypeAny, {
+    body: {
+        email: string;
+        password: string;
+    };
+}, {
+    body: {
+        email: string;
+        password: string;
+    };
+}>;

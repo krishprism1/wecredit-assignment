@@ -38,7 +38,6 @@ export class CreditService {
       throw new BadRequestError('Employment details must be filled to assess credit score');
     }
 
-    // 2. Deterministic Scoring Logic
     // Base score is 500
     let score = 500;
     const factors: Record<string, string> = {};

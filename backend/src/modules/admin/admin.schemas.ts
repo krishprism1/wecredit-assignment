@@ -10,6 +10,9 @@ export const reviewActionSchema = z.object({
 });
 
 export const rejectActionSchema = z.object({
+  params: z.object({
+    id: z.string().uuid(),
+  }),
   body: z.object({
     remarks: z.string().min(5, 'A rejection reason of at least 5 characters is required').max(500),
   }),

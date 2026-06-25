@@ -1,4 +1,3 @@
-// backend/src/modules/admin/admin.controller.ts
 import { Request, Response, NextFunction } from 'express';
 import { AdminService } from './admin.service.js';
 import { ApiResponse } from 'shared';

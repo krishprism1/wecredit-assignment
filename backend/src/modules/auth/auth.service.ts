@@ -17,7 +17,6 @@ export class AuthService {
       throw new BadRequestError('User registration failed');
     }
 
-    // Fetch user profile
     const { data: profile } = await supabaseAdmin
       .from('profiles')
       .select('full_name, is_admin')

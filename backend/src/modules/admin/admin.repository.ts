@@ -1,4 +1,3 @@
-// backend/src/modules/admin/admin.repository.ts
 import { supabaseAdmin } from '../../config/supabase.js';
 import { LoanApplication, AuditLog } from 'shared';
 
@@ -27,8 +26,6 @@ export class AdminRepository {
 
     if (filters.search) {
       // Search in full_name or email of profile
-      // Note: PostgREST doesn't support complex OR filters across relations easily in a single string,
-      // but we can query matching profiles first if search is present, then filter by applicant_id.
       const { data: profiles } = await supabaseAdmin
         .from('profiles')
         .select('id')

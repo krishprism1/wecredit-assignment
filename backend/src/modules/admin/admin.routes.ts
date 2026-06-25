@@ -1,4 +1,3 @@
-// backend/src/modules/admin/admin.routes.ts
 import { Router } from 'express';
 import { AdminController } from './admin.controller.js';
 import { authenticate } from '../../middleware/auth.middleware.js';
